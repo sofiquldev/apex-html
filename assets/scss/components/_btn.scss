@@ -1,0 +1,81 @@
+/*------------------------
+    Button Styles
+---------------------------*/
+.btn {
+    font-family: $default;
+    font-size: 22px;
+    font-weight: $regular;
+    line-height: 38px;
+    letter-spacing: 0em;
+    padding: 12px 21px;
+    border-width: 1px;
+    border-radius: 12px;
+    letter-spacing: 1.4%;
+    text-transform: capitalize;
+    border-color: transparent;
+
+    @include respond(medium) {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 10px 22px;
+    }
+
+    &-secondary {
+        color: $white;
+        background-color: $secondary;
+        border-color: $secondary;
+        transition: $transition;
+
+        &:hover {
+            background-color: $primary;
+            border-color: $white;
+        }
+    }
+
+    &-outline {
+        background-color: transparent;
+        color: $white;
+        border-color: currentColor;
+        transition: $transition;
+
+        &:hover {
+            color: $white;
+            background-color: $secondary;
+            border-color: $secondary;
+        }
+    }
+
+    &-light {
+        background-color: $white;
+        color: $heading;
+        border-color: transparent;
+        transition: $transition;
+
+        &:hover {
+            background-color: $secondary;
+            color: $white;
+            border-color: transparent;
+        }
+    }
+
+    &-dark {
+        background-color: $black;
+        color: $white;
+        border-color: transparent;
+        transition: $transition;
+
+        &:hover {
+            background-color: $black;
+            border-color: transparent;
+            color: $secondary;
+        }
+    }
+
+
+    &:focus,
+    &:focus-visible {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+}

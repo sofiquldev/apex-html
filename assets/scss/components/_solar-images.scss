@@ -1,0 +1,200 @@
+/*------------------------
+    Solar style images
+---------------------------*/
+.solar-images {
+    // max-width: 416px;
+    position: relative;
+    @include flexbox($a: center, $jc: center);
+    margin-left: auto;
+
+    @include respond(tabland) {
+        // margin: 100px auto;
+        margin: 20px auto 0;
+    }
+    @include respond(phone) {
+        // margin: 50px auto 0;
+    }
+    @include respond(phone-sm) {
+        margin: 30px auto;
+    }
+
+    .center-image {
+        width: 188px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        box-shadow: 0px 20px 80px 0px #0000001f;
+        @include transform;
+        @include flexbox($a: center, $jc: center);
+
+        @include respond(tabport) {
+            width: 150px;
+        }
+        @include respond(phone-sm) {
+            width: 110px;
+        }
+
+        img {
+            width: 75%;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        // @include respond(phone) {
+        //     width: 65px;
+        // }
+
+        a {
+            animation: pulse-animation 2s infinite;
+        }
+    }
+
+    .orbit {
+        // width: calc(100% - 65px);
+        width: 552px;
+        aspect-ratio: 1/1;
+        @include flexbox($a: center, $jc: center);
+        @include bg-props;
+        background-image: url(../images/clips/solar-circle.svg);
+        animation: rotation 60s infinite linear;
+        background-size: contain;
+        background-position: center center;
+        position: relative;
+
+        & > .orbit__item {
+            position: absolute;
+            @include flexbox($a: center, $jc: center);
+
+            &:not(.circle) {
+                img {
+                    height: 56px;
+
+                    @include respond(phone) {
+                        height: 35px;
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                max-width: 200px;
+                background: $white;
+                border-radius: 99px;
+                padding: 6px 22px;
+                object-fit: contain;
+                object-position: center;
+                mix-blend-mode: darken;
+                animation: rotation 60s infinite linear reverse;
+                box-shadow: -8px 20px 100px 0px #00000052;
+
+                @include respond(tabport) {
+                    max-width: 150px;
+                }
+                @include respond(phone) {
+                    max-width: 100px;
+                }
+            }
+
+            &.circle {
+                border-radius: 50%;
+                box-shadow: -8px 20px 100px 0px #00000052;
+                overflow: hidden;
+
+                & > img {
+                    width: 82px;
+                    aspect-ratio: 1/1;
+                    padding: 16px;
+                    border-radius: 0;
+                    border: none;
+                    object-fit: contain;
+                    object-position: center;
+                    box-shadow: none;
+
+                    @include respond(phone) {
+                        width: 50px;
+                    }
+                }
+            }
+
+            &:nth-of-type(1) {
+                transform: translateX(-190px);
+
+                @include respond(tabport) {
+                    transform: translateX(-160px);
+                }
+                @include respond(phone-sm) {
+                    transform: translateX(-120px);
+                }
+            }
+
+            &:nth-of-type(2) {
+                transform: translate(50px, 190px);
+
+                @include respond(tabport) {
+                    transform: translate(50px, 160px);
+                }
+                @include respond(phone-sm) {
+                    transform: translate(25px, 110px);
+                }
+            }
+
+            &:nth-of-type(3) {
+                transform: translateX(230px);
+
+                @include respond(tabport) {
+                    transform: translateX(170px);
+                }
+                @include respond(phone-sm) {
+                    transform: translateX(115px);
+                }
+            }
+
+            &:nth-of-type(4) {
+                transform: translateY(-230px);
+
+                @include respond(tabport) {
+                    transform: translateY(-170px);
+                }
+                @include respond(phone-sm) {
+                    transform: translateY(-120px);
+                }
+            }
+
+            &:nth-of-type(5) {
+                transform: translate(-190px, -145px);
+
+                @include respond(tabport) {
+                    transform: translate(-125px, -110px);
+                }
+                @include respond(phone-sm) {
+                    transform: translate(-66px, -63px);
+                    // transform: translate(-53px, -93px);
+                }
+            }
+        }
+    }
+}
+
+/*------------------------
+    Animation Keyframe
+---------------------------*/
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgba($white, 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba($white, 0);
+    }
+}

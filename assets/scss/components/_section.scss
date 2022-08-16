@@ -1,0 +1,221 @@
+section {
+    .section {
+        &__header {
+            font-family: $default;
+            letter-spacing: 0.004em;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto 60px;
+
+            @include respond(tabport) {
+                margin-bottom: 26px;
+            }
+
+            &__icon {
+                width: 60px;
+                aspect-ratio: 1/1;
+                @include flexbox($a: center, $jc: center);
+                margin: 0 auto 16px;
+
+                @include respond(xl) {
+                    width: 56px;
+                }
+
+                @include respond(medium) {
+                    width: 50px;
+                    margin-bottom: 16px;
+                }
+
+                @include respond(tabland) {
+                    width: 46px;
+                }
+
+                @include respond(phone) {
+                    width: 36px;
+                    margin-bottom: 8px;
+                }
+
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                }
+            }
+
+            &__logo {
+                width: 100%;
+                max-width: 233px;
+                margin: 0 auto 16px;
+
+                @include respond(tabport) {
+                    max-width: 180px;
+                }
+
+                @include respond(phone) {
+                    max-width: 120px;
+                }
+            }
+
+            &__title {
+                font-size: 56px;
+                font-weight: $bold;
+                line-height: 70px;
+                color: $heading;
+                text-transform: capitalize;
+
+                @include respond(xl) {
+                    font-size: 42px;
+                    line-height: 56px;
+                }
+
+                @include respond(medium) {
+                    font-size: 36px;
+                    line-height: 42px;
+                }
+
+                @include respond(tabland) {
+                    font-size: 32px;
+                }
+
+                @include respond(phone) {
+                    font-size: 28px;
+                    line-height: 36px;
+                }
+
+                @include respond(phone-sm) {
+                    font-size: 24px;
+                    line-height: 36px;
+                }
+            }
+
+            &__subtitle {
+                display: inline-block;
+                font-size: 15px;
+                font-weight: $semibold;
+                line-height: 18px;
+                text-transform: uppercase;
+                position: relative;
+                --line-width: 71px;
+                margin-bottom: 16px;
+
+                @include respond(phone) {
+                    --line-width: 40px;
+                }
+
+                &::after {
+                    @include pseudo;
+                    width: calc(#{var(--line-width)} / 2); // 71/2=35.5
+                    height: 2px;
+                    background-color: $secondary;
+                    top: 50%;
+                    left: 100%;
+                    transform: translate(16px, -50%);
+                }
+
+                &::before {
+                    @include pseudo;
+                    width: calc(#{var(--line-width)} / 2); // 71/2=35.5
+                    height: 2px;
+                    background-color: $secondary;
+                    top: 50%;
+                    right: 100%;
+                    transform: translate(calc(-100% - 16px), -50%);
+                }
+            }
+
+            &__text {
+                font-size: 22px;
+                font-weight: $regular;
+                line-height: 40px;
+                color: $content;
+
+                @include respond(medium) {
+                    font-size: 20px;
+                    line-height: 36px;
+                }
+
+                @include respond(tabport) {
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+
+                @include respond(phone) {
+                    font-size: 16px;
+                    line-height: 28px;
+                }
+            }
+
+            &.text-left {
+                max-width: 924px;
+                text-align: left;
+
+                .section__header {
+
+                    &__icon,
+                    &__logo {
+                        margin-left: unset;
+                        margin-right: auto;
+                    }
+
+                    &__subtitle {
+                        margin-left: calc(#{var(--line-width)} + 16px);
+
+                        &::before {
+                            width: var(--line-width);
+                        }
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            &.text-right {
+                text-align: right;
+                max-width: 924px;
+
+                .section__header {
+
+                    &__icon,
+                    &__logo {
+                        margin-right: unset;
+                        margin-left: auto;
+                    }
+
+                    &__subtitle {
+                        margin-right: calc(#{var(--line-width)} + 16px);
+
+                        &::before {
+                            display: none;
+                        }
+
+                        &::after {
+                            width: var(--line-width);
+                        }
+                    }
+                }
+            }
+
+            &.text-center {
+                text-align: center;
+            }
+
+            &.text-light {
+                color: $white;
+
+                .section__header {
+
+                    &__title,
+                    &__subtitle {
+                        color: $white;
+                    }
+
+                    &__text {
+                        color: $content2;
+                    }
+                }
+            }
+        }
+    }
+}

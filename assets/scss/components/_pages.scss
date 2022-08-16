@@ -1,0 +1,475 @@
+/*-----------------------------------
+    .Dealer-program
+-------------------------------------*/
+.dealer-program {
+    padding: 144px 0 60px;
+    overflow: hidden;
+
+    @include respond(xl) {
+        padding: 80px 0 0;
+    }
+
+    @include respond(medium) {
+        padding: 60px 0 0;
+    }
+
+    .dealer__image {
+        position: relative;
+
+        img {
+            width: 100%;
+            max-width: 560px;
+            aspect-ratio: 56/51;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .clip-image {
+            position: absolute;
+            width: 281px;
+            top: calc(100% - 150px);
+            right: -50%;
+            object-fit: contain;
+            z-index: -1;
+
+            @include respond(medium) {
+                right: -20px;
+                bottom: 20px;
+                top: inherit;
+            }
+        }
+    }
+
+    .dealer__content {
+        padding-top: 160px;
+
+        @include respond(xl) {
+            padding-top: 50px;
+        }
+
+        @include respond(medium) {
+            padding-top: 36px;
+        }
+    }
+}
+
+/*-----------------------------------
+    .solar-program
+-------------------------------------*/
+.solar-section {
+    overflow: hidden;
+    padding-top: 16px;
+
+    @include respond(tabport) {
+        margin-top: 0px;
+    }
+
+    .solar__inner {
+        background-color: rgba(#c2c2c2, 0.1);
+        border-radius: clamp(16px, 5%, 40px);
+        padding: 120px 150px 60px;
+
+        @include respond(xl) {
+            padding: 60px;
+        }
+
+        @include respond(phone-sm) {
+            padding: 30px;
+        }
+    }
+}
+
+/*-----------------------------------
+    Project Management Tools
+-------------------------------------*/
+.tool-section {
+    .tools__wrapper {
+        position: relative;
+
+        .bg-image {
+            position: absolute;
+            top: calc(100% + 40px);
+            z-index: -1;
+        }
+    }
+
+    .dashboard-image {
+        border-radius: clamp(16px, 5%, 40px);
+        overflow: hidden;
+        box-shadow: -6px 20px 100px 0px #41565a29;
+        width: 100%;
+        max-width: 1164px;
+        margin: clamp(80px, 8.5%, 160px) auto 0;
+        z-index: 1;
+        position: relative;
+
+        // % = (200 ✖  100) ➗ 2000 = 10
+    }
+}
+
+/*-----------------------------------
+    certificate section
+-------------------------------------*/
+.certificate {
+    background-color: rgba(#c4c4c4, 0.16);
+    padding-top: 310px;
+    padding-bottom: 183px;
+    margin-top: -250px;
+
+    @include respond(xl) {
+        padding-bottom: 100px;
+    }
+
+    @include respond(medium) {
+        padding-bottom: 60px;
+    }
+
+    .icon__box {
+        .ib__icon {
+            margin-bottom: 16px;
+        }
+
+        @include respond(tabport) {
+            margin-bottom: 15px;
+            padding: 30px;
+        }
+
+        @include respond(phone-sm) {
+            padding: 20px;
+        }
+    }
+
+    .section__header {
+        margin-top: clamp(60px, 7%, 120px);
+    }
+
+    &__wrapper {
+        width: 100%;
+        max-width: 760px;
+        background-color: $white;
+        @include flexbox($a: center, $jc: center);
+        flex-wrap: nowrap;
+        padding: 25px;
+        border-radius: 24px;
+        box-shadow: 0px 10px 56px 0px #00000014;
+        margin: 0 auto;
+
+        @include respond(tabport) {
+            padding: 16px;
+            border-radius: 12px;
+        }
+
+        .item {
+            // flex: 1;
+            padding: 0 8px;
+            max-width: 275px;
+            @include flexbox($a: center, $jc: center);
+
+            // display: table-cell;
+            @include respond(tabport) {
+                width: 60%;
+            }
+
+            @include respond(tabport) {
+                width: 50%;
+            }
+
+            &.square {
+                // flex-basis: 120px;
+                max-width: 160px;
+                aspect-ratio: 1/1;
+
+                @include respond(tabport) {
+                    width: 20%;
+                }
+
+                @include respond(phone) {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    testimonial section
+-------------------------------------*/
+.testimonial {
+    background:
+        url(../images/clips/dot-round.svg),
+        linear-gradient(left, rgba(#c4c4c4, 0.16), rgba(#c4c4c4, 0.16));
+    background-size: 25%, cover;
+    background-position: left -10vw bottom -10vw, center;
+    background-repeat: no-repeat, no-repeat;
+    padding: 150px 0 230px;
+
+    &.clip-none {
+        background: rgba(#c4c4c4, 0.16);
+    }
+
+    @include respond(xl) {
+        padding: 60px 0 100px;
+    }
+
+    @include respond(medium) {
+        padding: 60px 0;
+    }
+}
+
+/*-----------------------------------
+    Homeowner section
+-------------------------------------*/
+.homeowner {
+    padding: 175px 0;
+    @include bg-props;
+    background-image: linear-gradient(left, rgba($primary, 0.95), rgba($primary, 0.95)), url(../images/clips/bg-path.png), linear-gradient(left, $primary, $primary);
+    background-size: cover, 150%, cover;
+    background-position: center, center, center;
+
+    @include respond(xl) {
+        padding: 100px 0 60px;
+    }
+
+    @include respond(tabland) {
+        padding: 60px 0 16px;
+    }
+
+    .homeowner__swiper {
+        margin-top: 64px;
+    }
+}
+
+.swiper-pagination {
+    &-bullets {
+        @include flexbox($a: center, $jc: center);
+        margin: 100px auto 0px;
+
+        @include respond(medium) {
+            margin: 60px auto;
+        }
+    }
+
+    &-bullet {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background-color: $white;
+        position: relative;
+        margin: 8px !important;
+        opacity: 1;
+
+        &::after {
+            content: "";
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid transparent;
+            border-radius: 50%;
+            transition: $transition;
+        }
+
+        &-active {
+            &::after {
+                content: "";
+                width: calc(100% + 16px);
+                height: calc(100% + 16px);
+                border: 1px solid $white;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    contact item
+-------------------------------------*/
+.contact-us {
+    padding: 175px 50px 144px;
+
+    @include respond(xl) {
+        padding: 100px 36px;
+    }
+
+    @include respond(tabland) {
+        padding: 50px 0;
+    }
+
+    .content {
+        padding: 75px 50px;
+        background-color: $primary;
+        border-radius: 8px;
+
+        @include respond(phone) {
+            padding: 50px 36px;
+        }
+    }
+
+    .contact-image {
+        padding: 30px;
+    }
+}
+
+.contact-item {
+    @include flexbox($a: center, $jc: flex-start);
+    margin-top: 42px;
+    color: $white;
+    transition: $transition;
+
+    &:hover {
+        color: $secondary;
+    }
+
+    @include respond(phone) {
+        margin-top: 25px;
+    }
+
+    .icon {
+        width: 43px;
+        aspect-ratio: 1/1;
+        margin-right: 26px;
+
+        @include respond(phone) {
+            width: 36px;
+            margin-right: 16px;
+        }
+    }
+}
+
+/*-----------------------------------
+    About us section
+-------------------------------------*/
+.about {
+    background-color: rgba(#c4c4c4, 0.16);
+    z-index: -2;
+    padding-top: 0;
+    padding-bottom: 140px;
+
+    @include respond(tabland) {
+        padding-bottom: 360px;
+    }
+
+    @include respond(tabport) {
+        padding-bottom: 250px;
+    }
+
+    @include respond(phone) {
+        padding-bottom: 200px;
+    }
+
+    @include respond(phone-xm) {
+        padding-bottom: 15%;
+    }
+
+    &__inner {
+        padding: 122px 0 80px;
+        position: relative;
+
+        @include respond(tabland) {
+            padding: 60px 0;
+        }
+
+        &__bg {
+            width: 75%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            @include bg-props;
+            background-image: linear-gradient(left, rgba($primary, 0.95), rgba($primary, 0.95)), url(../images/clips/bg-path.png), linear-gradient(left, $primary, $primary);
+            background-size: 100%, 150%, 100%;
+            background-position: left, center, left;
+
+            @include respond(tabport) {
+                width: 100%;
+            }
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            @include respond(tabland) {
+                height: 360px;
+            }
+
+            @include respond(tabport) {
+                height: 280px;
+            }
+
+            @include respond(phone) {
+                height: 200px;
+            }
+
+            img {
+                width: auto;
+                max-width: 100%;
+                position: absolute;
+                bottom: -250px;
+                left: 0;
+                overflow: hidden;
+
+                @include respond(xl) {
+                    bottom: -225px;
+                }
+
+                @include respond(tabland) {
+                    position: relative;
+                    top: 0;
+                }
+
+                @include respond(tabport) {
+                    // left: 50%;
+                    // transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------------------------------
+    Services section
+-------------------------------------*/
+.services__inner {
+    padding: 60px 80px 60px;
+
+    @media (min-width: 1440px) {
+        max-width: 1520px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include respond(tabland) {
+        padding: 36px 36px;
+    }
+}
+
+.services-section {
+    padding: 110px 0 90px;
+
+    @include respond(medium) {
+        padding: 60px 0 30px;
+    }
+
+    .services-btn {
+        margin-top: 30px;
+        padding: 11px 38px;
+
+        &:hover {
+            transform: scale(1.1, 1.05);
+        }
+
+        @include respond(tabland) {
+            margin-top: 16px;
+        }
+
+        @include respond(phone) {
+            margin-top: 0px;
+        }
+    }
+}

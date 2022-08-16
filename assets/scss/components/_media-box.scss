@@ -1,0 +1,60 @@
+/*------------------------
+    Media box Styles
+---------------------------*/
+.media-box {
+    &__wrapper {
+        width: 100%;
+        border-radius: 16px;
+        @include flexbox($a: center, $jc: center);
+    }
+
+    &__item {
+        flex: 1;
+        flex-basis: 200px;
+        padding: 10px;
+    }
+
+    &__inner {
+        @include flexbox($a: center, $jc: center);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    &__play-btn {
+        width: 36px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__thumb {
+        width: 100%;
+        height: clamp(100px, 100%, 125px);
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(100deg, rgba($secondary, 0.5), rgba($primary, 0.65));
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        text-align: center;
+        font-weight: $semibold;
+        color: $heading;
+        margin: 12px 0 16px;
+    }
+
+}

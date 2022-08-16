@@ -1,0 +1,52 @@
+/*------------------------
+    Hero Section Styles
+---------------------------*/
+.counter {
+    font-family: $default;
+    text-align: center;
+    line-height: 125%;
+
+    &__wrapper {
+        width: 100%;
+        border-radius: 16px;
+        padding: 16px 16px 0;
+        background: linear-gradient(100deg, rgba($secondary, 0.25), rgba($primary, 0.35));
+        @include flexbox($a: center, $jc: center);
+    }
+
+    &__item {
+        @include flexbox($a: center, $jc: center);
+        flex-direction: column;
+        flex: 1;
+        flex-basis: 100px;
+        margin-bottom: 16px;
+    }
+
+    &__icon {
+        width: 60px;
+        aspect-ratio: 1/1;
+        padding: 12px;
+        border-radius: 8px;
+        background: rgba($white, 0.25);
+        @include flexbox($a: center, $jc: center);
+        margin-bottom: 8px;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    &__number {
+        font-size: 32px;
+        color: $heading;
+        font-weight: $bold;
+    }
+
+    &__title {
+        font-size: 20px;
+        color: $content;
+        font-weight: $regular;
+    }
+}

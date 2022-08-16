@@ -1,0 +1,1253 @@
+.text-sm {
+    font-size: 75%;
+    line-height: 60px;
+}
+
+.text-lg {
+    font-size: 115%;
+}
+
+.bg {
+    &-white {
+        background-color: white;
+    }
+}
+
+.box-shaddow {
+    box-shadow: 0px 26px 66px 0px #00000014;
+}
+
+/*-----------------------------------
+    .icon__box
+-------------------------------------*/
+.icon__box {
+    height: calc(100% - 30px);
+    min-height: 500px;
+
+    @include respond(tabland) {
+        height: unset;
+        min-height: unset;
+        margin-bottom: 30px;
+    }
+
+    .ib {
+        &__header {
+            &.v2 {
+                @include flexbox($a: flex-start, $jc: flex-start);
+            }
+        }
+
+        &__icon {
+            width: 65px;
+            aspect-ratio: 1/1;
+            @include flexbox($a: center, $jc: center);
+            margin-bottom: 16px;
+
+            @include respond(medium) {
+                width: 50px;
+            }
+
+            @include respond(tabland) {
+                width: 46px;
+            }
+
+            &.big {
+                width: 87px;
+                margin-bottom: 26px !important;
+            }
+
+            &.bg-round {
+                width: 83px;
+                background-color: $white;
+                border-radius: 50%;
+                padding: 20px;
+                margin-right: 32px;
+                aspect-ratio: 1/1;
+                overflow: hidden;
+                @include flexbox($a: center, $jc: center);
+                box-shadow: 0px 2px 8px 0px #00000029;
+
+                @include respond(medium) {
+                    width: 60px;
+                    padding: 16px;
+                }
+
+                @include respond(tabland) {
+                    width: 56px;
+                    padding: 12px;
+                    margin-right: 16px;
+                }
+
+                @include respond(phone) {
+                    width: 45px;
+                    padding: 10px;
+                    margin-right: 10px;
+                }
+
+                &.v2 {
+                    margin-bottom: 32px;
+
+                    @include respond(tabport) {
+                        margin-bottom: 24px;
+                    }
+
+                    @include respond(phone) {
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            h3 {
+                font-family: $default;
+                font-size: 46px;
+                font-weight: $bold;
+                line-height: 60px;
+                letter-spacing: 0.004em;
+                color: $heading;
+                margin-bottom: 13px;
+
+                a {
+                    color: $heading;
+                    display: inline-block;
+                    transition: $transition;
+                }
+
+                &:hover {
+                    // color: $secondary;
+
+                    a {
+                        color: $secondary;
+                    }
+                }
+
+                @include respond(xl) {
+                    font-size: 36px;
+                    line-height: 42px;
+                    margin-bottom: 4px;
+                }
+
+                @include respond(tabland) {
+                    font-size: 32px;
+                }
+
+                @include respond(phone) {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+
+            p {
+                font-family: $default;
+                font-size: 26px;
+                font-weight: $regular;
+                line-height: 31px;
+                letter-spacing: 0.004em;
+                color: $content;
+                margin-bottom: 0;
+
+                @include respond(medium) {
+                    font-size: 22px;
+                    line-height: 28px;
+                }
+
+                @include respond(phone) {
+                    font-size: 20px;
+                    line-height: 26px;
+                }
+            }
+        }
+
+        &__desc {
+            font-family: $default;
+            font-size: 24px;
+            font-weight: $regular;
+            line-height: 42px;
+            letter-spacing: 0.004em;
+            color: $content;
+
+            @include respond(xl) {
+                font-size: 22px;
+                line-height: 36px;
+            }
+
+            @include respond(medium) {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            @include respond(phone) {
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+
+        &__body {}
+    }
+
+    &.v2 {
+        height: unset;
+        min-height: unset;
+        display: flex;
+        margin-bottom: 56px;
+
+        @include respond(medium) {
+            margin-bottom: 36px;
+        }
+
+        @include respond(tabland) {
+            margin-bottom: 23px;
+        }
+
+        .ib {
+            &__title {
+                h3 {
+                    font-family: $default;
+                    font-size: 40px;
+                    font-weight: $bold;
+                    line-height: 60px;
+                    letter-spacing: 0.004em;
+                    color: $heading;
+                    margin: 13px 0;
+
+                    @include respond(medium) {
+                        font-size: 36px;
+                        line-height: 42px;
+                    }
+
+                    @include respond(tabland) {
+                        font-size: 28px;
+                        margin: 4px 0;
+                    }
+
+                    @include respond(tabport) {
+                        font-size: 24px;
+                        line-height: 36px;
+                    }
+
+                    @include respond(phone) {
+                        font-size: 20px;
+                        line-height: 32px;
+                        margin: 8px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.-p {
+        padding: 36px 45px;
+
+        @include respond(tabport) {
+            padding: 20px;
+        }
+    }
+
+    &.-br {
+        border-radius: 18px;
+
+        @include respond(tabport) {
+            border-radius: 8px;
+        }
+    }
+}
+
+/*-----------------------------------
+    .icon__list
+-------------------------------------*/
+.icon__list {
+    margin-top: 40px;
+    list-style: none;
+
+    @include respond(medium) {
+        margin-top: 28px;
+    }
+
+    @include respond(tabland) {
+        margin-top: 24px;
+    }
+
+    @include respond(phone) {
+        margin-top: 20px;
+    }
+
+    li {
+        font-family: $default;
+        font-size: 26px;
+        font-weight: $regular;
+        line-height: 31px;
+        letter-spacing: 0.004em;
+        color: $content;
+        margin-bottom: 30px;
+        display: flex;
+
+        @include respond(xl) {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        @include respond(tabland) {
+            font-size: 16px;
+            line-height: 25px;
+            // margin-bottom: 12px;
+        }
+    }
+
+    .icon {
+        width: 20px;
+        aspect-ratio: 1/1;
+        margin-right: 24px;
+        color: $heading;
+
+        @include respond(xl) {
+            margin-right: 16px;
+        }
+
+        svg {
+            @include respond(tabland) {
+                width: 20px;
+            }
+        }
+    }
+
+    &.v2 {
+        @include flexbox($jc: flex-start);
+
+        li {
+            min-width: 220px;
+
+            @include respond(xl) {
+                min-width: 210px;
+            }
+
+            @include respond(tabland) {
+                min-width: 200px;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    .tool__box
+-------------------------------------*/
+.tool__box {
+    @include flexbox($a: center, $jc: center);
+    flex-wrap: nowrap;
+    padding: 0 22px;
+    margin-top: 50px;
+    flex: 1;
+    flex-basis: 25%;
+
+    @include respond(tabland) {
+        flex-basis: 50%;
+        // flex-direction: column;
+        margin-top: 25px;
+    }
+
+
+    @include respond(tabport) {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @include respond(phone) {
+        flex-direction: row;
+        align-items: center;
+        flex-basis: 100%;
+        text-align: left;
+    }
+
+    .icon {
+        width: 82px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: $white;
+        @include flexbox($a: center, $jc: center);
+        padding: 16px;
+        margin-right: 26px;
+        box-shadow: -8px 14px 100px 0px #0000002e;
+
+        @include respond(xl) {
+            width: 72px;
+            margin-right: 16px;
+            padding: 12px;
+        }
+
+        @include respond(tabland) {
+            width: 65px;
+        }
+
+        @include respond(tabport) {
+            margin: auto;
+        }
+
+        @include respond(phone) {
+            width: 50px;
+            margin-right: 16px;
+        }
+
+        img {
+            display: inline-block;
+            mix-blend-mode: darken;
+        }
+    }
+
+    .title {
+        flex: 1;
+        font-family: $default;
+        font-size: 24px;
+        font-weight: $regular;
+        line-height: 36px;
+        letter-spacing: 0.004em;
+        color: $content;
+        margin-bottom: 0;
+
+        @include respond(xl) {
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+}
+
+.tools__wrapper {
+    @include flexbox($a: center, $jc: space-between);
+}
+
+
+/*-----------------------------------
+    image box
+-------------------------------------*/
+.image__box {
+    @include flexbox($a: flex-start, $jc: flex-start);
+
+    @include respond(medium) {
+        flex-direction: column;
+    }
+
+    @include respond(tabland) {
+        flex-direction: row;
+    }
+
+    @include respond(phone) {
+        flex-direction: column;
+    }
+
+    &__thumb {
+        flex: 1;
+        width: 100%;
+        max-width: 375px;
+        aspect-ratio: 1/1;
+        margin-right: 56px;
+
+        @include respond(xl) {
+            max-width: 250px;
+        }
+
+        @include respond(medium) {
+            margin-bottom: 16px;
+        }
+
+        @include respond(tabland) {
+            margin-right: 36px;
+        }
+
+        @include respond(phone) {
+            max-width: 100%;
+            margin: 0 auto 20px;
+        }
+
+        img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    &__content {
+        flex: 1;
+
+        .title {
+            font-family: $default;
+            font-size: 46px;
+            font-weight: $bold;
+            line-height: 62px;
+            letter-spacing: 0.004em;
+            color: $white;
+            margin-bottom: 30px;
+
+            @include respond(xl) {
+                font-size: 36px;
+                line-height: 46px;
+                margin-bottom: 24px;
+            }
+
+            @include respond(medium) {
+                font-size: 28px;
+                line-height: 38px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .desc {
+            @include flexbox($a: flex-start, $jc: flex-start);
+
+            .icon {
+                width: 20px;
+                aspect-ratio: 1/1;
+                margin: 8px 20px 0 0;
+                color: $white;
+
+                @include respond(medium) {
+                    margin-right: 16px;
+                }
+            }
+
+            p {
+                flex: 1;
+                font-family: $default;
+                font-size: 24px;
+                font-weight: $regular;
+                line-height: 42px;
+                letter-spacing: 0.004em;
+                color: $content2;
+                margin-bottom: 0;
+
+                @include respond(xl) {
+                    font-size: 22px;
+                    line-height: 36px;
+                }
+
+                @include respond(tabland) {
+                    font-size: 20px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    .services-card
+-------------------------------------*/
+.service__card {
+    height: calc(100% - 30px);
+    padding: 50px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px 0px #00000029;
+
+    @include respond(tabland) {
+        padding: 26px;
+    }
+
+    @include respond(phone-sm) {
+        padding: 26px 15px;
+    }
+
+    .card {
+        &__title {
+            font-family: $default;
+            font-size: 46px;
+            font-weight: $bold;
+            line-height: 60px;
+            letter-spacing: 0.004em;
+            margin-bottom: 25px;
+
+            @include respond(xl) {
+                font-size: 42px;
+                line-height: 56px;
+            }
+
+            @include respond(medium) {
+                font-size: 36px;
+                line-height: 42px;
+            }
+
+            @include respond(tabland) {
+                font-size: 28px;
+                font-size: 32px;
+            }
+
+            @include respond(phone) {
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    .services-box
+-------------------------------------*/
+.service__box {
+    width: 100%;
+    height: calc(100% - 30px);
+    aspect-ratio: 6/4.5;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+
+    .thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+        img {
+            transition: $transition;
+        }
+
+        &::after {
+            @include bg-overlay;
+            background: linear-gradient(180deg, rgba($black, 0) 49.48%, rgba($black, 1));
+            z-index: 0;
+            opacity: 0.8;
+        }
+    }
+
+    .title {
+        width: 100%;
+        font-family: $default;
+        font-size: 30px;
+        font-weight: $bold;
+        line-height: 60px;
+        letter-spacing: 0.004em;
+        text-align: center;
+        color: $white;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        transform: translateY(-75%);
+        transition: $transition;
+
+        &:hover {
+            color: $secondary;
+        }
+
+        @include respond(medium) {
+            font-size: 26px;
+            line-height: 36px;
+        }
+
+        @include respond(tabport) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        @include respond(phone) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+    &:hover {
+        .thumb {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    solar instalation section 
+-------------------------------------*/
+.solar-installation {}
+
+.bg-gray {
+    background-color: rgba(#c4c4c4, 0.14);
+    border-radius: 42px;
+
+    @include respond(tabland) {
+        border-radius: 36px;
+    }
+
+    @include respond(tabport) {
+        border-radius: 26px;
+    }
+
+    @include respond(phone) {
+        border-radius: 16px;
+    }
+}
+
+.inner-section {
+    @include flexbox($a: center, $jc: center);
+    margin-bottom: 65px;
+
+    @include respond(xl) {
+        margin-bottom: 42px;
+    }
+
+    &.reverse {
+        flex-direction: row-reverse;
+
+        @include respond(tabland) {
+            flex-direction: column;
+        }
+    }
+
+    @include respond(tabland) {
+        flex-direction: column;
+    }
+
+    &__media,
+    &__content {
+        padding: 75px;
+        flex: 1;
+
+        @include respond(xl) {
+            padding: 50px;
+        }
+
+        @include respond(medium) {
+            padding: 42px;
+        }
+
+        @include respond(tabland) {
+            padding: 36px;
+        }
+
+        @include respond(phone) {
+            padding: 16px;
+        }
+    }
+
+    &__media {
+        position: relative;
+    }
+
+    .icon__box {
+        max-width: 500px;
+        min-height: unset;
+        height: unset;
+
+        .ib__icon {
+            margin-bottom: 16px;
+        }
+    }
+
+    .icon__list {
+        li {
+            font-size: 24px;
+            line-height: 42px;
+
+            @include respond(xl) {
+                font-size: 18px;
+                line-height: 32px;
+            }
+
+            @include respond(phone) {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    .sticky-card
+-------------------------------------*/
+.clip {
+    width: 250px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: -1;
+
+    @include respond(medium) {
+        width: 200px;
+    }
+
+    @include respond(tabland) {
+        width: 180px;
+    }
+
+    @include respond(tabport) {
+        width: 150px;
+    }
+
+    @include respond(phone) {
+        width: 120px;
+    }
+}
+
+.sticky-card {
+    width: 290px;
+    background-color: $secondary;
+    color: $white;
+    padding: 16px 21px;
+    border-radius: 12px;
+    @include flexbox($a: center, $jc: flex-start);
+    margin: -16px auto 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 6px 8px 24px 0px rgba($black, 0.25);
+
+    &__icon {
+        width: 59px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: $white;
+        margin-right: 16px;
+        padding: 16px;
+        @include flexbox($a: center, $jc: center);
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    &__title {
+        font-family: $default;
+        font-size: 15px;
+        font-weight: $bold;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+        margin-bottom: 7px;
+    }
+
+    &__desc {
+        font-family: $default;
+        font-size: 14px;
+        font-weight: $regular;
+        line-height: 17px;
+        letter-spacing: 0.004em;
+        color: rgba($white, 0.7);
+        margin-bottom: 0;
+    }
+
+    &__price {
+        font-family: $default;
+        font-size: 15px;
+        font-weight: $bold;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+        margin-left: auto;
+    }
+
+    @include respond(phone) {
+        transform: scale(0.75);
+    }
+}
+
+.sticky-card-box {
+    width: 206px;
+    // height: 220px;
+    border-radius: 12px;
+    background: $secondary;
+    padding: 21px 25px;
+    color: $white;
+    position: absolute;
+    box-shadow: 6px 8px 24px 0px rgba($black, 0.25);
+
+    .card {
+        &__icon {
+            width: 67px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: rgba($white, 0.4);
+            padding: 14px;
+            @include flexbox($a: center, $jc: center);
+            margin-bottom: 13px;
+
+            @include respond(phone) {
+                width: 50px;
+                padding: 10px;
+            }
+
+
+            img {
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+
+        &__title {
+            font-family: $default;
+            letter-spacing: 0.01em;
+            font-size: 22px;
+            font-weight: $bold;
+            line-height: 30px;
+
+            @include respond(phone) {
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+            span {
+                font-weight: 300;
+                display: block;
+            }
+
+        }
+    }
+
+    &.v2 {
+        background: $white;
+        color: $black;
+
+        .card {
+            &__icon {
+                background-color: rgba($secondary, 0.58);
+            }
+        }
+    }
+}
+
+// sticky card positions
+
+.sticky-card-hero {
+    // width: 100%;
+    width: 350px;
+    border-radius: 14px;
+    background-color: $white;
+    padding: 16px 25px 8px;
+    font-family: $default;
+    text-align: left;
+    letter-spacing: 0em;
+    box-shadow: 6px 8px 24px 0px rgba($black, 0.25);
+
+    &.homeowner-hero {
+        width: 257px;
+    }
+
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateX(-50%);
+    z-index: 4;
+
+    @include respond(xl) {
+        left: 25%;
+    }
+
+    @include respond(phone) {
+        transform: scale(0.75);
+        display: none;
+    }
+
+    .card {
+        &__header {
+            @include flexbox($a: center, $jc: flex-start);
+            margin-bottom: 8px;
+
+            .avatar {
+                width: 65px;
+                // height: 65px;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                transform: translateY(-50%);
+                margin-right: 15px;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                    border-radius: 50%;
+                }
+
+                &__bg {
+                    width: 100px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .user-info {
+                color: #2f2f2f;
+                border-bottom: 1px solid rgba($black, 0.08);
+                padding: 0 0 12px 15px;
+
+                .name {
+                    font-size: 18px;
+                    font-weight: $bold;
+                    line-height: 22px;
+                }
+
+                .title {
+                    font-size: 14px;
+                    font-weight: $regular;
+                    line-height: 17px;
+                    opacity: 0.7;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &__content {
+            p {
+                font-family: $default;
+                font-size: 15px;
+                font-weight: $regular;
+                line-height: 23px;
+                letter-spacing: 0em;
+                color: $heading;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &.v2 {
+        background-color: $secondary;
+
+        .card {
+            &__header {
+                @include flexbox($a: center, $jc: flex-start);
+
+                .avatar {
+                    width: 54px;
+                    // height: 54px;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    transform: translateY(0);
+                    margin-right: 8px;
+                    position: relative;
+
+                    &__bg {
+                        display: none;
+                    }
+                }
+
+                .user-info {
+                    color: $white;
+                    border-color: rgba($white, 0.4);
+                }
+            }
+
+            &__content {
+                p {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+.hero__wrapper {
+    .clip.clip-1 {
+        top: 0;
+        right: 0;
+        z-index: 1;
+        filter: grayscale(1) brightness(3);
+        transform: translate(20%, -65%);
+    }
+}
+
+.homeowner {
+    overflow: hidden;
+
+    .clip.clip-1 {
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        filter: grayscale(1) brightness(3);
+        transform: translate(-30%, 50%);
+    }
+}
+
+.pay-first-card {
+    .sticky-card {
+        margin: 0;
+        position: absolute;
+        bottom: 150px;
+        left: 0;
+        transform: translateX(-15%);
+
+        @include respond(tabland) {
+            bottom: 100px;
+            transform: translateX(-15%);
+        }
+
+        @include respond(phone) {
+            bottom: 50px;
+            right: 50%;
+            transform: scale(0.75) translateX(-15%);
+        }
+    }
+
+
+    // clip style
+    .clip-1 {
+        top: 0px;
+        left: -15px;
+
+        @include respond(tabport) {
+            top: 0;
+            left: 0;
+        }
+
+        @include respond(phone) {
+            top: -10px;
+            left: -10px;
+        }
+    }
+
+    .clip-2 {
+        bottom: 25px;
+        right: 25px;
+
+        @include respond(tabland) {
+            bottom: 0px;
+            right: 0px;
+        }
+
+        @include respond(phone) {
+            bottom: -10px;
+        }
+    }
+}
+
+
+
+.performance-card {
+    .sticky-card-box {
+        top: 40px;
+        right: 10px;
+
+        @include respond(medium) {
+            top: 0;
+        }
+
+        @include respond(phone) {
+            transform: scale(0.75) translate(25%, -15%);
+        }
+    }
+
+    // clip style
+    .clip-1 {
+        top: 0px;
+        left: -16px;
+
+        @include respond(tabport) {
+            top: 0;
+            left: 0;
+        }
+
+        @include respond(phone) {
+            top: -10px;
+            left: -10px;
+        }
+    }
+
+    .clip-2 {
+        bottom: 25px;
+        right: 25px;
+
+        @include respond(tabport) {
+            bottom: 0px;
+            right: 0px;
+        }
+
+        @include respond(phone) {
+            bottom: -10px;
+        }
+    }
+}
+
+
+.electric-card {
+    .sticky-card {
+        margin: 0;
+        position: absolute;
+        bottom: 150px;
+        left: 0;
+        transform: translateX(-15%);
+
+        @include respond(tabport) {
+            transform: translateX(-15%);
+        }
+
+        @include respond(phone) {
+            bottom: 50px;
+            right: 50%;
+            transform: scale(0.75) translateX(-15%);
+        }
+    }
+
+    .clip-1 {
+        bottom: 0;
+        left: 0;
+
+        @include respond(phone) {
+            bottom: -10px;
+            left: -10px;
+        }
+    }
+}
+
+.hvac-card {
+    .sticky-card-box {
+        bottom: 40px;
+        right: 10px;
+
+        @include respond(medium) {
+            bottom: 0;
+        }
+
+        @include respond(phone) {
+            transform: scale(0.75) translate(25%, 15%);
+        }
+    }
+
+    // clip style
+    .clip-1 {
+        top: 40px;
+        left: 40px;
+
+        @include respond(tabland) {
+            top: 10px;
+            left: 10px;
+        }
+
+        @include respond(phone) {
+            display: none;
+        }
+    }
+}
+
+
+.roof-card {
+    .sticky-card-hero {
+        &.v2 {
+            top: 150px;
+            transform: translateX(-15%);
+            left: 0;
+
+            @include respond(medium) {
+                top: 100px;
+                transform: translateX(-50%);
+            }
+
+            @include respond(tabport) {
+                top: 75px;
+                transform: translateX(-40%);
+            }
+
+            @include respond(phone) {
+                display: block;
+                top: 25px;
+                transform: scale(0.75) translateX(-50%);
+            }
+        }
+    }
+
+    .clip-1 {
+        bottom: 0;
+        left: 0;
+
+        @include respond(phone) {
+            bottom: -10px;
+            left: -10px;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+footer {
+    margin: 0 0 110px;
+
+    @include respond(tabport) {
+        margin: 0 0 60px;
+    }
+
+    .footer__inner {
+        background-color: rgba(#c4c4c4, 0.26);
+        padding: 100px 100px 50px;
+        border-radius: 42px;
+
+        @include respond(medium) {
+            padding: 60px 60px 36px;
+        }
+
+        @include respond(tabport) {
+            padding: 60px 24px 24px;
+        }
+    }
+
+    .brand {
+        margin-bottom: 120px;
+
+        @include respond(medium) {
+            margin-bottom: 60px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 343px;
+
+            @include respond(medium) {
+                max-width: 250px;
+            }
+
+            @include respond(tabport) {
+                max-width: 220px;
+            }
+        }
+    }
+}
+
+.footer-widget {
+    margin-bottom: 50px;
+
+    @include respond(medium) {
+        margin-bottom: 36px;
+    }
+
+    .title {
+        font-family: $default;
+        font-size: 24px;
+        font-weight: $regular;
+        line-height: 36px;
+        letter-spacing: 0em;
+        color: $heading;
+        margin-bottom: 26px;
+    }
+
+    .list {
+        list-style: none;
+
+        li {
+            a {
+                display: inline-block;
+                font-family: $default;
+                font-size: 20px;
+                font-weight: $regular;
+                line-height: 32px;
+                letter-spacing: 0em;
+                color: $heading;
+                transition: $transition;
+                margin-bottom: 24px;
+
+                @include respond(tabland) {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+
+                .icon {
+                    width: 24px;
+                    aspect-ratio: 1/1;
+                    margin-right: 16px;
+                }
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
+
+.copyright__text {
+    font-family: $default;
+    font-size: 24px;
+    font-weight: $regular;
+    line-height: 36px;
+    letter-spacing: 0em;
+    color: $heading;
+
+    @include respond(tabland) {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
